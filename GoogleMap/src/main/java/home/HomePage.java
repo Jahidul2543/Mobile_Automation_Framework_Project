@@ -1,6 +1,7 @@
 package home;
 
 import base.MobileAPI;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Keyboard;
@@ -124,11 +125,11 @@ public class HomePage extends MobileAPI {
     }
 
     public void search() {
-        searchBoxClassName.get(0).sendKeys(" Dhaka,Bangladesh", Keys.ENTER);
-        sleepFor(6);
-     /* ad.getKeyboard().pressKey(ENTER);
-      ad.getKeyboard().releaseKey(ENTER);
-      sleepFor(20);*/
+        MobileElement element = (MobileElement) searchBoxClassName.get(0);
+        element.sendKeys(" Dhaka,Bangladesh");
+        //Hit enter
+        ad.tap(1,967,1841,1);
+        ad.lockScreen(1);
     }
 
     public void clickGoButton() {
@@ -137,11 +138,3 @@ public class HomePage extends MobileAPI {
         burgerBtn.get(3).click();
     }
 }
-/*
-driver.findElementByXPath("//input[@id=\"lst-ib\"]").click();
-        driver.getKeyboard().sendKeys("Perfecto Mobile communit*");
-//KeyEvent 67= Backspace key. Deletes characters before the insertion point
-        driver.pressKeyCode(67);
-        driver.getKeyboard().sendKeys("y");
-//KeyEvent 66= Enter key
-        driver.pressKeyCode(66);*/

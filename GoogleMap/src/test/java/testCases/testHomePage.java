@@ -100,7 +100,6 @@ public class testHomePage extends HomePage {
     public void testStartDrivingTo() {
         objHomePage.startDriving();
     }
-
     @Test
     public void testSearch() {
         objHomePage.search();
